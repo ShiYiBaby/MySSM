@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userVo">
+	<!-- 根据用户名密码查询 -->
+	<select id="selectOne" resultType="com.shiyi.baby.vo.UserVo" parameterType="java.util.Map">
+		select * from user where name=#{name} and password=#{password}
+	</select>
+	<!-- 插入一条用户记录 -->
+	<insert id="insertOne" parameterType="com.shiyi.baby.vo.UserVo">
+		INSERT INTO USER (NAME,PASSWORD,questions,answers) VALUES (#{name},#{password},#{answers},#{questions});
+	</insert>
+</mapper>
